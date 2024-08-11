@@ -1,56 +1,81 @@
 # Home-Automation using ESP32 with Google home
 
-This project implements a smart home automation system using the ESP32 microcontroller and Google Home. The system allows you to control various home appliances through voice commands via Google Home, enabling a seamless and convenient smart home experience. With the ESP32 at its core, the system is both affordable and highly customizable, making it ideal for DIY enthusiasts and tech-savvy homeowners.
+This project implements a smart home automation system using the ESP32 microcontroller and Google Home. Control various home appliances through voice commands via Google Home with a highly customizable and cost-effective setup.
 
-KEY FEATURES:
+KEY FEATURE:
+Voice Control: Operate home appliances using Google Home voice commands.
 
-Voice Control: Control your home appliances using Google Home voice commands for a hands-free experience.
+ESP32 Integration: Utilizes the ESP32 microcontroller for Wi-Fi-based control of devices.
 
-ESP32 Integration: Leverages the versatile ESP32 microcontroller to connect and control various devices over Wi-Fi.
+Real-Time Monitoring: Check the status of connected devices in real-time.
 
-Real-Time Monitoring: Provides real-time status updates of connected devices, ensuring you always know the state of your home.
+Customizable Setup: Tailor the system to your specific needs and appliances.
 
-Customizable Setup: Easily customize the system to control different appliances or add new functionalities as needed.
-
-Cost-Effective: A budget-friendly solution for smart home automation, using widely available components.
+Cost-Effective: Affordable solution using readily available components.
 
 SYSTEM ARCHITECTURE:
 
-ESP32: Acts as the central hub, controlling connected devices such as lights, fans, and other appliances via relays or smart switches.
+ESP32: Central hub for controlling connected devices.
 
-Google Home: Serves as the user interface, allowing you to send voice commands to the ESP32 through the Google Assistant.
+Google Home: Interface for issuing voice commands.
 
-Wi-Fi Communication: The ESP32 communicates with Google Home over Wi-Fi, ensuring a responsive and reliable connection.
+Wi-Fi Communication: Ensures seamless connectivity between ESP32 and Google Home.
 
-Web Interface (Optional): Includes an optional web interface for manual control and monitoring of devices, accessible from any browser.
+Web Interface (Optional): Provides manual control and monitoring via a web browser.
 
-SETUP AND REQUIREMENT:
+SETUP AND INSTALLATION:
 
-Hardware Requirements:
+1. Install the Arduino IDE
+Download and install the Arduino IDE from the Arduino website.
 
-ESP32 microcontroller
-Relays or smart switches
-Wi-Fi network
-Google Home device
-Connected appliances (lights, fans, etc.)
+2. Configure Arduino IDE for ESP32
+Open Arduino IDE.
+Update Preferences:
+Go to File -> Preferences.
+In the Additional Boards Manager URLs field, add the following URLs:
+bash
+Copy code
+https://dl.espressif.com/dl/package_esp32_index.json
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+Install ESP32 Board:
+Go to Tools -> Board -> Boards Manager.
+Search for "ESP32" and click "Install" for the ESP32 board package.
 
-SOFTWARE REQUIREMENT:
+3. Download Required Libraries
 
-Arduino IDE with ESP32 board support
-Google Home app
-Required libraries (listed in Installation)
-Steps:
+Sinric Pro:
+Download the Sinric Pro library for ESP8266 & ESP32 from Sinric Pro GitHub.
 
-Flash the ESP32 with the provided firmware using the Arduino IDE.
-Configure your Wi-Fi credentials and Google Home integration in the code.
-Set up the hardware connections (relays, smart switches, etc.).
-Add the ESP32 to Google Home via the app, and configure voice commands.
-Start controlling your home appliances with voice commands!
+WebSockets:
+Install the WebSockets library (minimum version 2.3.5) from the Library Manager:
+Go to Sketch -> Include Library -> Manage Libraries.
+Search for "WebSockets" and install the latest version (minimum 2.3.5).
 
-USAGE:
-Once set up, simply use voice commands through Google Home to control your connected devices. For example, you can say, "Hey Google, turn on the living room lights," and the ESP32 will trigger the appropriate relay to power on the lights.
+ArduinoJson:
+Install the ArduinoJson library (minimum version 6.12.0) from the Library Manager:
+Go to Sketch -> Include Library -> Manage Libraries.
+Search for "ArduinoJson" and install version 6.12.0 or later.
+
+4. Program the ESP32
+Connect the ESP32 to your computer using a USB cable.
+Select the appropriate board and port:
+Go to Tools -> Board and select "ESP32 Dev Module" (or your specific ESP32 model).
+Go to Tools -> Port and select the COM port associated with your ESP32.
+Upload the Code:
+Open the provided example code or your own code in the Arduino IDE.
+Click the "Upload" button to compile and upload the code to the ESP32.
+Wait for the upload process to complete and ensure there are no errors.
+Usage
+After programming the ESP32, follow these steps to integrate with Google Home:
+
+CONFIGURE OF ESP32:
+Adjust the settings in the code to match your Wi-Fi credentials and Google Home integration details.
+
+ADD TO GOOGLE HOME:
+Use the Google Home app to add the ESP32 as a new device.
+Follow the instructions in the app to configure voice commands for controlling your appliances.
 
 FUTURE ENHANCEMENT:
-Integration with additional smart home ecosystems like Amazon Alexa or Apple HomeKit.
-Expansion to include sensors for home security and environmental monitoring.
-Development of a mobile app for enhanced control and automation scheduling
+Integrate with other smart home ecosystems (e.g., Amazon Alexa).
+Expand functionality to include additional sensors and automation features.
+Develop a dedicated mobile app for enhanced control and scheduling.
